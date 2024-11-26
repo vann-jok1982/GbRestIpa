@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все персонажи Рика и Морти</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .character {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .character img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        .character-info {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Персонажи Рика и Морти</h1>
+
+<div th:if="${allCharacters != null}">
+    <div th:each="character : ${allCharacters.results}" class="character">
+        <img th:src="${character.image}" alt="Изображение персонажа"/>
+        <div class="character-info">
+            <h3 th:text="${character.name}">Имя персонажа</h3>
+            <p><strong>Статус:</strong> <span th:text="${character.status}">Статус</span></p>
+            <p><strong>Вид:</strong> <span th:text="${character.species}">Вид</span></p>
+            <p><strong>Пол:</strong> <span th:text="${character.gender}">Пол</span></p>
+            <p><strong>Дата создания:</strong> <span th:text="${#dates.format(character.created, 'dd/MM/yyyy')}">Дата создания</span></p>
+            <a th:href="${character.url}" target="_blank">Подробнее</a>
+        </div>
+    </div>
+</div>
+
+<div th:if="${allCharacters == null}">
+    <p>Нет доступных персонажей.</p>
+</div>
+
+</body>
+</html>
