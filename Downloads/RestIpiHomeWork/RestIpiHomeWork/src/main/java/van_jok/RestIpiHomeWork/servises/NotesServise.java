@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
-public class NotesServise {
+public class NotesServise implements NotesService {
     private final NotesRepositrory notesRepositrory;
     @Autowired
     public NotesServise(NotesRepositrory notesRepositrory) {
