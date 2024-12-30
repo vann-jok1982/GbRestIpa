@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Купить шины</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        form {
+            margin: 20px 0;
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Выбор шин</h1>
+<img src="https://penza.kolex.ru/img/servisnye-uslugi/sezonnoe-hranenie/slider2.png" alt="Картинка колёс">
+
+<!-- Форма для отправки артикула -->
+<form action="/submit-article" method="POST">
+    <input type="text" name="article" placeholder="Артикул" required>
+    <input type="submit" value="Отправить артикул">
+</form>
+
+<!-- Форма для отправки наименования -->
+<form action="/submit-name" method="POST">
+    <input type="text" name="name" placeholder="Наименование" required>
+    <input type="submit" value="Отправить наименование">
+</form>
+
+<a href="/tire">Перейти на страницу шин</a>
+
+</body>
+</html>
