@@ -56,7 +56,14 @@
     <input type="submit" value="Отправить наименование">
 </form>
 
-<a href="/tire">Перейти на страницу шин</a>
+<!-- Форма для отправки склада -->
+<form action="/submit-warehouse" method="POST">
+    <input type="text" name="name" placeholder="Название склада" required>
+    <input type="submit" value="Отправить склад">
+</form>
+
+<a href="/tire" style="margin-right: 20px;">Перейти на страницу шин</a>
+<a href="/ware_house">Перейти на страницу складов</a>
 
 </body>
 </html>

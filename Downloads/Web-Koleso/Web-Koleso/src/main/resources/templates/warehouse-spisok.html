@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список шин</title>
+    <title>Список складов</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -88,21 +88,19 @@
 <body>
 <a href="/home" class="home-link">На главную</a>
 
-<h1>Список шин</h1>
+<h1>Список складов</h1>
 
 <table>
     <thead>
     <tr>
         <th>ID</th>
-        <th>Артикул</th>
         <th>Название</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="tire : ${tire}">
-        <td th:text="${tire.id}" data-label="ID"></td>
-        <td th:text="${tire.article}" data-label="Артикул"></td>
-        <td th:text="${tire.name}" data-label="Название"></td>
+    <tr th:each="wareHouse : ${wareHouse}">
+        <td th:text="${wareHouse.getId()}" data-label="ID"></td>
+        <td th:text="${wareHouse.getName()}" data-label="Название"></td>
     </tr>
     </tbody>
 </table>
